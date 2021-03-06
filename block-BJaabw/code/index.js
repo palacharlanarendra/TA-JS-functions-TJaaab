@@ -5,15 +5,16 @@
 Write a function named minToSec that takes an integer minutes and converts it to seconds.
 
 
-minToSec(50) ➞ 3000
-minToSec(13) ➞ 780
-minToSec(2) ➞ 120
+
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(min) {
+  return min * 60;
 }
+minToSec(50);
+minToSec(13);
+minToSec(2);
 // - Execute the function with required parameter
 
 /* 2. 
@@ -26,9 +27,11 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(numA,numB,number) {
+  return number>numA && number<numB?true:false
 }
+isInRange(1, 20, 9); // true
+isInRange(1, 10, 19); // false
 // - Execute the function with required parameter
 
 /* 2. calculateBMI
@@ -49,9 +52,19 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight,height) {
+    let bmi = (weight/(height * height));
+    if(bmi<18.5){
+      return "Underweight";
+    }else if(bmi>18.5 && bmi<24.9){
+      return "Normalweight";
+    }else if (bmi>25 && bmi<29.9){
+      return "Overweight";
+    }else{
+      return "Obese";
+    }
 }
+calculateBMI(80,5);
 
 /* 3. appropiateDrinks
 
@@ -62,11 +75,22 @@ Create a function that take the age are return the appropiate drink based on the
 - Under 21 — return "drink fruit-flavored beer"
 - 21 years or older — return "drink throat-piercing vodka"
 
+
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+
+  if(age<14){
+    return "drink fruit juice";
+  }else if(age<18){
+    return "drink soda";
+  }else if (age<21){
+    return "drink fruit-flavored beer";
+  }else{
+    return "drink throat-piercing vodka";
+  }
 }
+appropiateDrinks(27);
 
 /* 4. Add two numers or string
 
@@ -79,8 +103,14 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(para1,para2) {
+  if(typeof para1=="number" && typeof para2=="number"){
+    return para1 + para2;
+  }else if(typeof para1=="string" && typeof para2=="string"){
+    return para1 + para2;
+  }else{
+    return "Enter valid values"
+  }
 }
 
 // Function Test
